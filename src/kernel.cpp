@@ -400,7 +400,9 @@ bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake)
     if (!ReadBlockFromDisk(blockprev, pindex->GetBlockPos()))
         return error("CheckProofOfStake(): INFO: failed to find block");
 	unsigned int nTime = block.nTime;
-	if (nTime == 1562396941) return true;
+	//Blocks 3825, 4244
+	if (nTime == 1562396941 || 
+		nTime == 1562450031) return true;
 
     unsigned int nInterval = 0;
 
