@@ -399,12 +399,11 @@ bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake)
     CBlock blockprev;
     if (!ReadBlockFromDisk(blockprev, pindex->GetBlockPos()))
         return error("CheckProofOfStake(): INFO: failed to find block");
-	
 	unsigned int nTime = block.nTime;
 	if (nTime == 1562396941) return true;
 
     unsigned int nInterval = 0;
-    unsigned int nTime = block.nTime;
+
         if (!CheckStakeKernelHash(block.nBits, blockprev, txPrev, txin.prevout, nTime, nInterval, true, hashProofOfStake, fDebug) && (nTime > 1505247602))
         return error("CheckProofOfStake() : INFO: check kernel failed on coinstake %s, hashProof=%s \n", tx.GetHash().ToString().c_str(), hashProofOfStake.ToString().c_str()); // may occur during initial download or if behind on block chain sync
 
