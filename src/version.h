@@ -11,7 +11,7 @@
 /**
  * network protocol versioning
  */
-static const int PROTOCOL_VERSION = 72007;
+static const int PROTOCOL_VERSION = 72008;
 
 //! initial proto version, to be increased after version/verack negotiation
 static const int INIT_PROTO_VERSION = 209;
@@ -20,7 +20,7 @@ static const int INIT_PROTO_VERSION = 209;
 static const int GETHEADERS_VERSION = 70077;
 
 //! disconnect from peers older than this proto version
-static const int MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT = 72001;
+static const int MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT = 72007;
 static const int MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT = 72008;
 
 static const int MIN_PEER_VERSION_FIXED_SIGTIME = 72006;
@@ -28,11 +28,9 @@ static const int MIN_PEER_VERSION_FIXED_SIGTIME = 72006;
 //! masternodes older than this proto version use old strMessage format for mnannounce
 static const int MIN_PEER_MNANNOUNCE = 70003;
 //! In this version, "Fake Stake" vulnerability mitigations were introduced.
-// Corrected to last current release 72004 instead of 72002
-// Both 72002 and 72004 correlate to the same Fake Stake update.
 static const int FAKE_STAKE_VERSION = 72001;
 
-// In this version we change the min amount to stake with from any amount to 15 coins
+// In this version we change the min amount to stake with from any amount to 30 coins
 static const int STAKEV2_VERSION = 72001;
 
 //! nTime field added to CAddress, starting with this version;
