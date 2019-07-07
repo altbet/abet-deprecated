@@ -21,7 +21,7 @@ static const int GETHEADERS_VERSION = 70077;
 
 //! disconnect from peers older than this proto version
 static const int MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT = 72001;
-static const int MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT = 72007;
+static const int MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT = 72008;
 
 static const int MIN_PEER_VERSION_FIXED_SIGTIME = 72006;
 
