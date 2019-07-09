@@ -2182,29 +2182,18 @@ bool CheckTransaction(const CTransaction& tx, bool fZerocoinActive, bool fReject
 
             int64_t nSubsidy = 0;
 
-            if (nHeight == 0) { // Premine
-                nSubsidy = 5500000 * COIN; //5.5m to cover old chain wallets
-			} else if (nHeight <= 200 && nHeight > 0) { // PoW
-				nSubsidy = 0 * COIN;
-            } else if (nHeight <= 10580 && nHeight > 200) { // Swap Phase
-                nSubsidy = 0.01 * COIN;
-            } else if (nHeight <= 30740 && nHeight > 10580) { // Phase 1
-                nSubsidy = 60 * COIN;
-            } else if (nHeight <= 50900 && nHeight > 30740) { // Phase 2
-                nSubsidy = 65 * COIN;
-            } else if (nHeight <= 71060 && nHeight > 50900) { // Phase 3
-                nSubsidy = 70 * COIN;
-            } else if (nHeight <= 91220 && nHeight > 71060) { // Phase 4
-                nSubsidy = 50 * COIN;
-            } else if (nHeight <= 111380 && nHeight > 91220) { // Phase 5
-                nSubsidy = 40 * COIN;
-            } else if (nHeight <= 131540 && nHeight > 111380) { // Phase 6
-                nSubsidy = 30 * COIN;
-            } else if (nHeight <= 151700 && nHeight > 131540) { // Phase 7
-                nSubsidy = 20 * COIN;
-            } else if (nHeight > 151700) { // Phase 8
-                nSubsidy = 10 * COIN;
-            }
+            if (nHeight == 0) {nSubsidy = 5500000 * COIN;} //Swap Coins 5.5m
+			else if (nHeight <= 200 && nHeight > 0) {nSubsidy = 0 * COIN;} //PoW Phase
+			else if (nHeight <= 10580 && nHeight > 200) {nSubsidy = 0.01 * COIN;} //Phase 1 (20 blocks where part of PoW)
+			else if (nHeight < 30740) {nSubsidy = 60 * COIN;} //Phase 2
+			else if (nHeight < 50900) {nSubsidy = 65 * COIN;} //Phase 3
+			else if (nHeight < 71060) {nSubsidy = 70 * COIN;} //Phase 4
+			else if (nHeight < 91220) {nSubsidy = 50 * COIN;} //Phase 5
+			else if (nHeight < 111380) {nSubsidy = 40 * COIN;} //Phase 6
+			else if (nHeight < 131540) {nSubsidy = 30 * COIN;} //Phase 7
+			else if (nHeight < 151700) {nSubsidy = 20 * COIN;} //Phase 8
+			else if (nHeight > 151700) {nSubsidy = 10 * COIN;} //Phase 9
+
             // Check if we reached the coin max supply.
             int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
             if (nMoneySupply + nSubsidy >= Params().MaxMoneyOut())
@@ -5963,7 +5952,8 @@ bool CheckTransaction(const CTransaction& tx, bool fZerocoinActive, bool fReject
                 }
                 // broken releases with wrong blockchain data
                 if (pfrom->cleanSubVer == "/Altbet Core:0.0.0.0/" ||
-                    pfrom->cleanSubVer == "/Altbet Core:0.0.0.1/") {
+					pfrom->cleanSubVer == "/Altbet Core:0.0.0.1/" ||
+                    pfrom->cleanSubVer == "/Altbet Core:1.0.0.0/" && ActiveProtocol() < 72007) {
                     LOCK(cs_main);
                     Misbehaving(pfrom->GetId(), 100); // instantly ban them because they have bad block data
                     return false;
@@ -6820,7 +6810,7 @@ bool CheckTransaction(const CTransaction& tx, bool fZerocoinActive, bool fReject
 		
         int ActiveProtocol()
         {
-            if (IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
+            if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
                 return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
             return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
         }
