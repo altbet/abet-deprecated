@@ -31,46 +31,38 @@
 *.out
 *.app
 
-\.vs/altbet-core/v15/Browse\.VC\.db
-
-\.vs/altbet-core/v15/Browse\.VC\.opendb
-
-\.vs/ProjectSettings\.json
-
-\.vs/slnx\.sqlite
-
-\.vs/altbet-core/v15/\.suo
-
-\.vs/altbet-core/v15/ipch/AutoPCH/54b8d9a1e354f82/POW\.ipch
-
-\.vs/altbet-core/v15/ipch/AutoPCH/6022c6eb9483ef8f/SPORK\.ipch
-
-\.vs/VSWorkspaceState\.json
-
-\.vs/altbet-core/v15/ipch/AutoPCH/62ee637654a070c9/CLIENTVERSION\.ipch
-
-\.vs/Altbet/v15/\.suo
-
-\.vs/Altbet/v15/Browse\.VC\.db
-
-\.vs/Altbet/v15/Browse\.VC\.opendb
-
-\.vs/Altbet/v15/ipch/AutoPCH/ae069a83827da561/CLIENTVERSION\.ipch
-
-\.vs/Altbet/v15/ipch/AutoPCH/6f79583190db2e41/CLIENTVERSION\.ipch
-
-\.vs/Altbet/v15/ipch/AutoPCH/93fb4048a4a0b419/OVERVIEWPAGE\.ipch
-
 \.vs/abet/v15/\.suo
 
 \.vs/abet/v15/Browse\.VC\.db
 
 \.vs/abet/v15/Browse\.VC\.opendb
 
-\.vs/abet/v15/ipch/AutoPCH/38278a8ce010d547/SPORK\.ipch
+\.vs/abet/v15/ipch/AutoPCH/c0ceb75b9e9b6c9a/INIT\.ipch
 
-\.vs/abet/v15/ipch/AutoPCH/dcae3a565fcbccd1/KERNEL\.ipch
+\.vs/abet/v15/ipch/AutoPCH/d6ff1b9a453b5369/WALLETDB\.ipch
+
+\.vs/slnx\.sqlite
+
+\.vs/ProjectSettings\.json
+
+\.vs/VSWorkspaceState\.json
+
+\.vs/abet/v15/ipch/AutoPCH/28d8ec8077ba5fcb/KERNEL\.ipch
+
+\.vs/abet/v15/ipch/AutoPCH/38278a8ce010d547/SPORK\.ipch
 
 \.vs/abet/v15/ipch/AutoPCH/621686803bd38b21/KERNEL\.ipch
 
 \.vs/abet/v15/ipch/AutoPCH/b1ea916e2b158361/CLIENTVERSION\.ipch
+
+\.vs/abet/v15/ipch/AutoPCH/b374273529afd818/INIT\.ipch
+
+\.vs/abet/v15/ipch/AutoPCH/dcae3a565fcbccd1/KERNEL\.ipch
+
+\.vs/abet/v15/ipch/AutoPCH/77dd3e92a14eeab5/KERNEL\.ipch
+
+\.vs/abet/v15/ipch/AutoPCH/f138ed562192c215/SPORK\.ipch
+
+\.vs/abet/v15/ipch/AutoPCH/d28596d6359447f3/CLIENTVERSION\.ipch
+
+\.vs/abet/v15/ipch/AutoPCH/d80b8b1524af0631/AES_HELPER\.ipch
