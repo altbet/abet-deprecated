@@ -59,7 +59,8 @@ boost::assign::map_list_of
 (3900, uint256("0xe4365fdf5eb4fe1e6d3cbc498aa42c560d167698972853b9bac69811a44ce591"))
 (3950, uint256("0x7cef902d8a35d8f2f5ece98e2b248f2c52712713426d8b52b8dfbc1f36b028e2"))
 (4000, uint256("0x368f2f3bdc5db7a940478645b94267595850dd2dbeaac8d1f9f41bdde53ad326"))
-(4240, uint256("0xe74f53edf64c55d0a4ffd6f8e774c3460179b9df0b3c4586ab1168fa92cde639"));
+(4240, uint256("0xe74f53edf64c55d0a4ffd6f8e774c3460179b9df0b3c4586ab1168fa92cde639"))
+(10390, uint256("0x732f9f981e12bc92ae553276df45bec79218fb68baaac86f08bd183c2ba3549c"));
 
 
 
@@ -67,10 +68,10 @@ boost::assign::map_list_of
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-	1562449373, // * UNIX timestamp of last checkpoint block
+	1563578703, // * UNIX timestamp of last checkpoint block
     0,     // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
-	9231         // * estimated number of transactions per day after checkpoint
+	31620         // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
@@ -202,11 +203,11 @@ public:
 
         nPoolMaxTransactions = 3;
 
-        nEnforceNewSporkKey = 1561995372;
-        nRejectOldSporkKey = 1561995372;
+        nEnforceNewSporkKey = 1563578985; //07/19/2019 @ 11:29pm (UTC)
+        nRejectOldSporkKey = 1563753600; //07/22/2019 @ 12:00am (UTC)
 		
-		strSporkKey = "0239efda1c4227d678db60478f4a00bd2b90210805fe3faa91f8edec9f6a545dd1";
-        strSporkKeyOld = "0469C3EA8B850A960FE799FAD34B34ED88037FCCBB9DA1B03472B0B3A23FDF16B0D9DC67AF8414423FC420286CE4319993976A6DCA09544BD739CAB6FDF777C662";
+		strSporkKey = "032b46812dedb731d515b4fe28efd6591adcae691f03fb1577f1a6fb1c89f67ba2";
+        strSporkKeyOld = "0239efda1c4227d678db60478f4a00bd2b90210805fe3faa91f8edec9f6a545dd1";
         strObfuscationPoolDummyAddress = "Ab5bNTKMKVJWLTDCwwEEvHH9MzDhxRaL5a";
         nStartMasternodePayments = 1561995372;
 
