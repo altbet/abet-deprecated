@@ -400,9 +400,11 @@ bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake)
     if (!ReadBlockFromDisk(blockprev, pindex->GetBlockPos()))
         return error("CheckProofOfStake(): INFO: failed to find block");
 	unsigned int nTime = block.nTime;
+	// Hung on these blocks because Staking on segwit was not done properly.
 	//Blocks 3825, 4244
 	if (nTime == 1562396941 || 
 		nTime == 1562450031) return true;
+	//if (chainActive.Height() == 3825 || 4244) return true;
 
     unsigned int nInterval = 0;
 
