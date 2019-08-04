@@ -14,10 +14,8 @@
 #include <QMenu>
 #include <QPoint>
 #include <QString>
-#include <QStringList>
 #include <QTreeWidgetItem>
 class WalletModel;
-class ClientModel;
 
 class MultisigDialog;
 class CCoinControl;
@@ -36,10 +34,8 @@ public:
     explicit CoinControlDialog(QWidget* parent = nullptr, bool fMultisigEnabled = false);
     ~CoinControlDialog();
 
-	void CheckDialogLablesUpdated();
     void setModel(WalletModel* model);
-	void setClientModel(ClientModel* clientModel);
-    //void updateDialogLabels();
+    void updateDialogLabels();
 
     // static because also called from sendcoinsdialog
     static void updateLabels(WalletModel*, QDialog*);
@@ -52,7 +48,6 @@ public:
 private:
     Ui::CoinControlDialog* ui;
     WalletModel* model;
-	ClientModel* clientModel;
     int sortColumn;
     Qt::SortOrder sortOrder;
     bool fMultisigEnabled;
@@ -61,14 +56,13 @@ private:
     QAction* copyTransactionHashAction;
     QAction* lockAction;
     QAction* unlockAction;
-	QStringList toogleLockList;
 
     QString strPad(QString, int, QString);
     void sortView(int, Qt::SortOrder);
     void updateView();
 
     enum {
-        CCOLUMN_CHECKBOX = 0,
+        COLUMN_CHECKBOX,
         COLUMN_AMOUNT,
         COLUMN_LABEL,
         COLUMN_ADDRESS,
