@@ -619,7 +619,7 @@ void CoinControlDialog::radioListMode(bool checked)
 }
 
 //toggle advaced features 
-void CoinControlDialog::toggled(bool)
+void CoinControlDialog::toggled(bool checked)
 {
     if (ui->radioListMode->isChecked()){
         if (ui->advanced->checkState()){
