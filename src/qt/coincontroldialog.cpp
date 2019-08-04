@@ -282,7 +282,7 @@ void CoinControlDialog::greater()// select all inputs grater than "amount"
                         coinControl->UnSelectAll();
                         ui->treeWidget->setEnabled(true);
                         CoinControlDialog::updateLabels(model, this);
-                        CheckDialogLablesUpdated();
+						updateDialogLabels();
         }
     } 
 } 
@@ -303,7 +303,7 @@ void CoinControlDialog::Less()//select all inputs Less than "amount"
                         coinControl->UnSelectAll();
                         ui->treeWidget->setEnabled(true);
                         CoinControlDialog::updateLabels(model, this);
-                        CheckDialogLablesUpdated();
+						updateDialogLabels();
         }
     } 
 }
@@ -330,7 +330,7 @@ void CoinControlDialog::Equal() // select all inputs equal to "amount"
         if (state == Qt::Unchecked)
         coinControl->UnSelectAll();
         CoinControlDialog::updateLabels(model, this);
-        CheckDialogLablesUpdated();
+		updateDialogLabels();
         }
     } 
 }
@@ -347,7 +347,7 @@ void CoinControlDialog::select_50() //select the first 50 inputs
                 if (state == Qt::Unchecked)
                     coinControl->UnSelectAll(); // just to be sure
                     CoinControlDialog::updateLabels(model, this);
-                    CheckDialogLablesUpdated();
+                    updateDialogLabels();
                 }else{ //if we have less then 50 inputs give the user dialogue to inform them of this issue  
                     QMessageBox msgBox;
                     msgBox.setObjectName("lockMessageBox");
@@ -369,7 +369,7 @@ void CoinControlDialog::select_100() //select the first 100 inputs
                 if (state == Qt::Unchecked)
                     coinControl->UnSelectAll(); // just to be sure
                     CoinControlDialog::updateLabels(model, this);
-                    CheckDialogLablesUpdated();
+                    updateDialogLabels();
                 }else{ //if we have less then 100 inputs give the user dialogue to inform them of this issue  
                     QMessageBox msgBox;
                     msgBox.setObjectName("lockMessageBox");
@@ -391,7 +391,7 @@ void CoinControlDialog::select_250() //select the first 250 inputs
                 if (state == Qt::Unchecked)
                     coinControl->UnSelectAll(); // just to be sure
                     CoinControlDialog::updateLabels(model, this);
-                    CheckDialogLablesUpdated();
+                    updateDialogLabels();
                 }else{ //if we have less then 250 inputs give the user dialogue to inform them of this issue  
                     QMessageBox msgBox;
                     msgBox.setObjectName("lockMessageBox");
