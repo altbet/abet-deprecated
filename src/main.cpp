@@ -2184,39 +2184,17 @@ int64_t GetBlockValue(int nHeight)
 
     int64_t nSubsidy = 0;
 
-    if (nHeight == 0) {
-        nSubsidy = 5500000 * COIN;
-    } //Swap Coins 5.5m
-    else if (nHeight <= 200 && nHeight > 0) {
-        nSubsidy = 0 * COIN;
-    } //PoW Phase
-    else if (nHeight <= 10580 && nHeight > 200) {
-        nSubsidy = 0.01 * COIN;
-    } //Phase 1 (20 blocks where part of PoW)
-    else if (nHeight < 30740) {
-        nSubsidy = 60 * COIN;
-    } //Phase 2
-    else if (nHeight < 50900) {
-        nSubsidy = 65 * COIN;
-    } //Phase 3
-    else if (nHeight < 71060) {
-        nSubsidy = 70 * COIN;
-    } //Phase 4
-    else if (nHeight < 91220) {
-        nSubsidy = 50 * COIN;
-    } //Phase 5
-    else if (nHeight < 111380) {
-        nSubsidy = 40 * COIN;
-    } //Phase 6
-    else if (nHeight < 131540) {
-        nSubsidy = 30 * COIN;
-    } //Phase 7
-    else if (nHeight < 151700) {
-        nSubsidy = 20 * COIN;
-    } //Phase 8
-    else if (nHeight > 151700) {
-        nSubsidy = 10 * COIN;
-    } //Phase 9
+    if (nHeight == 0) {nSubsidy = 5500000 * COIN;} //Swap Coins 5.5m
+    else if (nHeight <= 200 && nHeight > 0) {nSubsidy = 0 * COIN;} //PoW Phase
+    else if (nHeight <= 10580 && nHeight > 200) {nSubsidy = 0.01 * COIN;} //Phase 1 (20 blocks where part of PoW)
+    else if (nHeight < 30740) {nSubsidy = 60 * COIN;} //Phase 2
+    else if (nHeight < 50900) {nSubsidy = 65 * COIN;} //Phase 3
+    else if (nHeight < 71060) {nSubsidy = 70 * COIN;} //Phase 4
+    else if (nHeight < 91220) {nSubsidy = 50 * COIN;} //Phase 5
+    else if (nHeight < 111380) {nSubsidy = 40 * COIN;} //Phase 6
+    else if (nHeight < 131540) {nSubsidy = 30 * COIN;} //Phase 7
+    else if (nHeight < 151700) {nSubsidy = 20 * COIN;} //Phase 8
+    else if (nHeight > 151700) {nSubsidy = 10 * COIN;} //Phase 9
 
     // Check if we reached the coin max supply.
     int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
@@ -2231,12 +2209,8 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 {
     int64_t ret = 0;
 
-    if (nHeight <= 500) {
-        ret = blockValue * 0;
-    } else if (nHeight > 500) {
-        ret = blockValue * 0.9; //90% for nodes
-    }
-
+    if (nHeight <= 500) {ret = blockValue * 0;} 
+	else if (nHeight > 500) {ret = blockValue * 0.9;} // 90% of block paid to nodes
     return ret;
 }
 
@@ -2396,25 +2370,6 @@ void UpdateCoins(const CTransaction& tx, CValidationState& state, CCoinsViewCach
     // add outputs
     inputs.ModifyCoins(tx.GetHash())->FromTx(tx, nHeight);
 }
-
-
-/*
-        void UpdateCoins(const CTransaction& tx, CValidationState& state, CCoinsViewCache& inputs, CTxUndo& txundo, int nHeight)
-        {
-            // mark inputs spent
-            if (!tx.IsCoinBase() && !tx.IsZerocoinSpend()) {
-                txundo.vprevout.reserve(tx.vin.size());
-                BOOST_FOREACH (const CTxIn& txin, tx.vin) {
-                    txundo.vprevout.push_back(CTxInUndo());
-                    bool ret = inputs.ModifyCoins(txin.prevout.hash)->Spend(txin.prevout, txundo.vprevout.back());
-                    assert(ret);
-                }
-            }
-
-            // add outputs
-            inputs.ModifyCoins(tx.GetHash())->FromTx(tx, nHeight);
-        }
-		*/
 
 bool CScriptCheck::operator()()
 {
@@ -3188,7 +3143,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     LogPrint("bench", "      - Connect %u transactions: %.2fms (%.3fms/tx, %.3fms/txin) [%.2fs]\n", (unsigned)block.vtx.size(), 0.001 * (nTime1 - nTimeStart), 0.001 * (nTime1 - nTimeStart) / block.vtx.size(), nInputs <= 1 ? 0 : 0.001 * (nTime1 - nTimeStart) / (nInputs - 1), nTimeConnect * 0.000001);
 
     //PoW phase redistributed fees to miner. PoS stage destroys fees.
-	CAmount nExpectedMint = GetBlockValue((pindex->nHeight >= 30000 ? pindex->nHeight : pindex->pprev->nHeight));
+	CAmount nExpectedMint = GetBlockValue((pindex->nHeight >= 30740 ? pindex->nHeight : pindex->pprev->nHeight));
     if (block.IsProofOfWork())
         nExpectedMint += nFees;
 

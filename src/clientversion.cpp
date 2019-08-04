@@ -18,7 +18,7 @@ const std::string CLIENT_NAME("Altbet Core");
 /**
  * Client version number
  */
-#define CLIENT_VERSION_SUFFIX "v1.0.1.1"
+#define CLIENT_VERSION_SUFFIX "v1.0.1.2"
 
 /**
  * The following part of the code determines the CLIENT_BUILD variable.
