@@ -51,7 +51,7 @@ static const int MEMPOOL_GD_VERSION = 60002;
 static const int NO_BLOOM_VERSION = 70005;
 
 //! This is block time 07/20/2019 @ 9:17am (UTC) block 10500
-static const int BLOCK_TIME_TARGET = 1563614223;
+//static const int BLOCK_TIME_TARGET = 1563614223;
 
 //! When we fully accepted staking on segwit. This is unix time: 07/16/2019 @ 1:00am (UTC)
 static const int STAKING_ON_SEGWIT = 1563238800;

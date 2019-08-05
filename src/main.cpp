@@ -4274,16 +4274,13 @@ bool CheckWork(const CBlock block, CBlockIndex* const pindexPrev)
     if (pindexPrev == NULL)
         return error("%s: null pindexPrev for block %s", __func__, block.GetHash().GetHex());
 
-	if (BLOCK_TIME_TARGET < pindexPrev->nTime) {
-		unsigned int nBitsRequired = GetNextWorkRequired(pindexPrev, &block);
-		LogPrintf("Check Block Time : Accepting block time of 120 seconds after block 10500 and up.\n");
-
-		if (block.nBits != nBitsRequired)
-			return error("%s: incorrect proof of work at %d", __func__, pindexPrev->nHeight + 1);
-	}
+    unsigned int nBitsRequired = GetNextWorkRequired(pindexPrev, &block);
 
     if (block.IsProofOfWork() && pindexPrev->nHeight + 1 > chainParams.LAST_POW_BLOCK())
         return error("%s: reject proof-of-work at height %d", __func__, pindexPrev->nHeight + 1);
+
+    if (block.nBits != nBitsRequired)
+        return error("%s: incorrect proof of work at %d", __func__, pindexPrev->nHeight + 1);
 
     if (block.IsProofOfStake()) {
         uint256 hashProofOfStake;
