@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2016 The Dash developers
 // Copyright (c) 2016-2017 The PIVX developers
+// Copyright (c) 2019 The Altbet developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -27,7 +28,7 @@ using namespace boost;
     Sporks 11,12, and 16 to be removed with 1st zerocoin release
 */
 #define SPORK_START 10001
-#define SPORK_END 10026
+#define SPORK_END 10027
 
 #define SPORK_2_SWIFTTX 10001
 #define SPORK_3_SWIFTTX_BLOCK_FILTERING 10002
@@ -46,9 +47,10 @@ using namespace boost;
 #define SPORK_18_SEGWIT_ACTIVATION 10021
 #define SPORK_19_ZEROCOIN_MAINTENANCE_MODE 10022
 #define SPORK_20_LOCK_INVALID_UTXO 10023
-#define SPORK_21_SEGWIT_ON_COINBASE 10024
+//#define SPORK_21_SEGWIT_ON_COINBASE 10024
 #define SPORK_22_NEW_COLLATERAL 10025
-#define SPORK_23_BLOCK_TIME_RETARGET 10026
+//#define SPORK_23_BLOCK_TIME_RETARGET 10026
+#define SPORK_24_NEW_PROTOCOL_ENFORCEMENT_3 10027
 
 
 #define SPORK_2_SWIFTTX_DEFAULT 978307200                         //2001-1-1
@@ -68,9 +70,10 @@ using namespace boost;
 #define SPORK_18_SEGWIT_ACTIVATION_DEFAULT 4070908800
 #define SPORK_19_ZEROCOIN_MAINTENANCE_MODE_DEFAULT 4070908800
 #define SPORK_20_LOCK_INVALID_UTXO_DEFAULT 4070908800
-#define SPORK_21_SEGWIT_ON_COINBASE_DEFAULT 4070908800
-#define SPORK_22_NEW_COLLATERAL_DEFAULT 4070908800
-#define SPORK_23_BLOCK_TIME_RETARGET_DEFAULT 4070908800
+//#define SPORK_21_SEGWIT_ON_COINBASE_DEFAULT 4070908800
+#define SPORK_22_NEW_COLLATERAL_DEFAULT 4070908800 // Code has been disabled for accidental activation 
+//#define SPORK_23_BLOCK_TIME_RETARGET_DEFAULT 4070908800
+#define SPORK_24_NEW_PROTOCOL_ENFORCEMENT_3_DEFAULT 4070908800 //OFF
 
 class CSporkMessage;
 class CSporkManager;

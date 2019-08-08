@@ -395,7 +395,8 @@ void OverviewPage::updateMasternodeInfo()
         ui->labelMnTotal_Value->setText(QString::number(totalmn));
 
         // TODO: need a read actual 24h blockcount from chain
-        int BlockCount24h = 1440;
+		// Based on 2minute block time
+        int BlockCount24h = 720;
 
         // Update ROI
 		double BlockReward = GetBlockValue(chainActive.Height());
