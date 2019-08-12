@@ -11,7 +11,7 @@
 /**
  * network protocol versioning
  */
-static const int PROTOCOL_VERSION = 72011;
+static const int PROTOCOL_VERSION = 72012;
 
 //! initial proto version, to be increased after version/verack negotiation
 static const int INIT_PROTO_VERSION = 209;
@@ -20,8 +20,8 @@ static const int INIT_PROTO_VERSION = 209;
 static const int GETHEADERS_VERSION = 70077;
 
 //! disconnect from peers older than this proto version
-static const int MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT = 72008;
-static const int MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT = 72011;
+static const int MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT = 72011;
+static const int MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT = 72012;
 
 static const int MIN_PEER_VERSION_FIXED_SIGTIME = 72006;
 
@@ -49,6 +49,9 @@ static const int MEMPOOL_GD_VERSION = 60002;
 
 //! "filter*" commands are disabled without NODE_BLOOM after and including this version
 static const int NO_BLOOM_VERSION = 70005;
+
+//! This is block time 07/20/2019 @ 9:17am (UTC) block 10500
+//static const int BLOCK_TIME_TARGET = 1563614223;
 
 //! When we fully accepted staking on segwit. This is unix time: 07/16/2019 @ 1:00am (UTC)
 static const int STAKING_ON_SEGWIT = 1563238800;
