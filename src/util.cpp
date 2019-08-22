@@ -142,7 +142,7 @@ bool fLogIPs = false;
 volatile bool fReopenDebugLog = false;
 
 /** GUI-based logging */
-int logSize = 25; // Default amount of logs kept by the GUI logger before the oldest gets erased
+int logSize = 75; // Default amount of logs kept by the GUI logger before the oldest gets erased
 vector<string> logs;
 
 /** Init OpenSSL library multithreading support */
