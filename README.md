@@ -18,16 +18,17 @@ About Altbet.io
 
 | Specification         | Descriptor                              |
 |-----------------------|-----------------------------------------|
-| Ticker                | ABET                                     |
+| Ticker                | ABET                                    |
 | Algorithm             | QUARK                                   |
-| SegWit             | ON                                   |
-| RPC Port              | 9322                                   |
-| P2P Port              | 8322                                   |
-| Block Spacing         | 120 Seconds                              |
+| SegWit                | ON                                      |
+| RPC Port              | 9322                                    |
+| P2P Port              | 8322                                    |
+| Masternode Collateral | 10000 ABET                              |
+| Block Spacing         | 120 Seconds                             |
 | Mined/Minted Maturity | 61 Blocks (~120 Minutes)                |
-| Confirmation          | 6 Blocks (~12 Minutes)                   |
-| PoW Period            | nHeight ≤ 200                       |
-| PoS Period            | nHeight ≥ 201                       |
+| Confirmation          | 6 Blocks (~12 Minutes)                  |
+| PoW Period            | nHeight ≤ 200                           |
+| PoS Period            | nHeight ≥ 201                           |
 | Protocol Support      | IPV4, IPV6, TOR, I2P                    |
 
 <a name="pos-staking-requirements"></a>
@@ -44,12 +45,12 @@ About Altbet.io
 
 | Subsidy | Block           | Reward | Reward Split   | Note          |
 |---------|-----------------|--------|----------------|---------------|
-| SWAP  | 201-10580     | 0.01 ABET | 90% MN / 10% POS | 14 days |
-| Phase 1  | 10581-30740   | 60.00 ABET | 90% MN / 10% POS | 28 days |
-| Phase 2  | 30741-50900   | 65.00 ABET | 90% MN / 10% POS | 28 days |
-| Phase 3  | 50901-71060   | 70.00 ABET | 90% MN / 10% POS | 28 days |
-| Phase 4  | 71061-91220   | 50.00 ABET | 90% MN / 10% POS | 28 days |
-| Phase 5  | 91221-111380   | 40.00 ABET | 90% MN / 10% POS | 28 days |
-| Phase 6  | 111381-131540   | 30.00 ABET | 90% MN / 10% POS | 28 days |
-| Phase 7  | 131541-151700   | 20.00 ABET | 90% MN / 10% POS | 28 days |
-| Phase 8 | 151701∞ | 10.00 ABET | 90% MN / 10% POS | In Perpetuity |
+| SWAP    | 201-10580       | 0.01 ABET  | 90% MN / 10% POS | 14 days |
+| Phase 1 | 10581-30740     | 60.00 ABET | 90% MN / 10% POS | 28 days |
+| Phase 2 | 30741-50900     | 65.00 ABET | 90% MN / 10% POS | 28 days |
+| Phase 3 | 50901-71060     | 70.00 ABET | 90% MN / 10% POS | 28 days |
+| Phase 4 | 71061-91220     | 50.00 ABET | 90% MN / 10% POS | 28 days |
+| Phase 5 | 91221-111380    | 40.00 ABET | 90% MN / 10% POS | 28 days |
+| Phase 6 | 111381-131540   | 30.00 ABET | 90% MN / 10% POS | 28 days |
+| Phase 7 | 131541-151700   | 20.00 ABET | 90% MN / 10% POS | 28 days |
+| Phase 8 | 151701∞         | 10.00 ABET | 90% MN / 10% POS | In Perpetuity |
