@@ -167,22 +167,17 @@ public:
         assert(hashGenesisBlock == uint256("0x852bf462534c29c0039513f244dd9b80a581f7cddf81214fe4236b3866c4d41d"));
         assert(genesis.hashMerkleRoot == uint256("0x73b17d2797b7b4d0a6fe09204aa736b6c1d290d3a6a6f944b7eab02f7029d0af"));
 
-        vSeeds.push_back(CDNSSeedData("140.82.48.162", "140.82.48.162"));
-        vSeeds.push_back(CDNSSeedData("8.9.36.49", "8.9.36.49"));
-		vSeeds.push_back(CDNSSeedData("95.179.149.133", "95.179.149.133"));
-		vSeeds.push_back(CDNSSeedData("108.61.211.2", "108.61.211.2"));
-		vSeeds.push_back(CDNSSeedData("45.63.85.96", "45.63.85.96"));
-		vSeeds.push_back(CDNSSeedData("140.82.1.78", "140.82.1.78"));
-		vSeeds.push_back(CDNSSeedData("140.82.48.162", "140.82.48.162"));
-		vSeeds.push_back(CDNSSeedData("45.63.88.175", "45.63.88.175"));
-		vSeeds.push_back(CDNSSeedData("149.28.203.191", "149.28.203.191"));
-		vSeeds.push_back(CDNSSeedData("116.203.176.91", "116.203.176.91"));
-		vSeeds.push_back(CDNSSeedData("45.76.11.89", "45.76.11.89"));
-		vSeeds.push_back(CDNSSeedData("144.202.107.249", "144.202.107.249"));
-		vSeeds.push_back(CDNSSeedData("136.244.104.7", "136.244.104.7"));
-		vSeeds.push_back(CDNSSeedData("104.207.148.137", "104.207.148.137"));
-		vSeeds.push_back(CDNSSeedData("95.216.79.235", "95.216.79.235"));
-		vSeeds.push_back(CDNSSeedData("144.202.107.249", "144.202.107.249"));
+	vSeeds.push_back(CDNSSeedData("clubs.seed.altbet.io", "clubs.seed.altbet.io"));
+        vSeeds.push_back(CDNSSeedData("hearts.seed.altbet.io", "hearts.seed.altbet.io"));
+        vSeeds.push_back(CDNSSeedData("diamonds.seed.altbet.io", "diamonds.seed.altbet.io"));
+        vSeeds.push_back(CDNSSeedData("spades.seed.altbet.io", "spades.seed.altbet.io"));
+
+        vSeeds.push_back(CDNSSeedData("149.248.55.142", "149.248.55.142"));
+        vSeeds.push_back(CDNSSeedData("45.32.5.0", "45.32.5.0"));
+	vSeeds.push_back(CDNSSeedData("45.77.202.35", "45.77.202.35"));
+	vSeeds.push_back(CDNSSeedData("45.76.11.89", "45.76.11.89"));
+	vSeeds.push_back(CDNSSeedData("149.28.230.145", "149.28.230.145"));
+	vSeeds.push_back(CDNSSeedData("208.167.255.100", "208.167.255.100"));
 
 		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23); // A
 		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 25); // B
