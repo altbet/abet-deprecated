@@ -61,15 +61,19 @@ boost::assign::map_list_of
 (4000, uint256("0x368f2f3bdc5db7a940478645b94267595850dd2dbeaac8d1f9f41bdde53ad326"))
 (4240, uint256("0xe74f53edf64c55d0a4ffd6f8e774c3460179b9df0b3c4586ab1168fa92cde639"))
 (10390, uint256("0x732f9f981e12bc92ae553276df45bec79218fb68baaac86f08bd183c2ba3549c"))
-(21500, uint256("0xd58ce6ced3ba2e5fd01cc9dde8dfbc2722de3ed78451e15e1e3811116c9e130b"));
+(21500, uint256("0xd58ce6ced3ba2e5fd01cc9dde8dfbc2722de3ed78451e15e1e3811116c9e130b"))
+(71060, uint256("0xfcde231ec54e063f2021487634dd05c66fdc6533a2c3c438918c587b475dfc07 "))
+(71061, uint256("0x7371329fb8e724e6db2d93b9da9468ce5e957af48654b7da6f175b9fe6bfd980 "))
+(71100, uint256("0xac4b9cc54ad07edf112283954dc8bdd9285c14c35c4e5890b4f69894318c7de5 "));
+   
 
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-	1564951151, // * UNIX timestamp of last checkpoint block
+    1571261328, // * UNIX timestamp of last checkpoint block
     0,     // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
-	94705         // * estimated number of transactions per day after checkpoint
+    461215      // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
@@ -167,22 +171,17 @@ public:
         assert(hashGenesisBlock == uint256("0x852bf462534c29c0039513f244dd9b80a581f7cddf81214fe4236b3866c4d41d"));
         assert(genesis.hashMerkleRoot == uint256("0x73b17d2797b7b4d0a6fe09204aa736b6c1d290d3a6a6f944b7eab02f7029d0af"));
 
-        vSeeds.push_back(CDNSSeedData("140.82.48.162", "140.82.48.162"));
-        vSeeds.push_back(CDNSSeedData("8.9.36.49", "8.9.36.49"));
-		vSeeds.push_back(CDNSSeedData("95.179.149.133", "95.179.149.133"));
-		vSeeds.push_back(CDNSSeedData("108.61.211.2", "108.61.211.2"));
-		vSeeds.push_back(CDNSSeedData("45.63.85.96", "45.63.85.96"));
-		vSeeds.push_back(CDNSSeedData("140.82.1.78", "140.82.1.78"));
-		vSeeds.push_back(CDNSSeedData("140.82.48.162", "140.82.48.162"));
-		vSeeds.push_back(CDNSSeedData("45.63.88.175", "45.63.88.175"));
-		vSeeds.push_back(CDNSSeedData("149.28.203.191", "149.28.203.191"));
-		vSeeds.push_back(CDNSSeedData("116.203.176.91", "116.203.176.91"));
-		vSeeds.push_back(CDNSSeedData("45.76.11.89", "45.76.11.89"));
-		vSeeds.push_back(CDNSSeedData("144.202.107.249", "144.202.107.249"));
-		vSeeds.push_back(CDNSSeedData("136.244.104.7", "136.244.104.7"));
-		vSeeds.push_back(CDNSSeedData("104.207.148.137", "104.207.148.137"));
-		vSeeds.push_back(CDNSSeedData("95.216.79.235", "95.216.79.235"));
-		vSeeds.push_back(CDNSSeedData("144.202.107.249", "144.202.107.249"));
+	vSeeds.push_back(CDNSSeedData("clubs.seed.altbet.io", "clubs.seed.altbet.io"));
+        vSeeds.push_back(CDNSSeedData("hearts.seed.altbet.io", "hearts.seed.altbet.io"));
+        vSeeds.push_back(CDNSSeedData("diamonds.seed.altbet.io", "diamonds.seed.altbet.io"));
+        vSeeds.push_back(CDNSSeedData("spades.seed.altbet.io", "spades.seed.altbet.io"));
+
+        vSeeds.push_back(CDNSSeedData("149.248.55.142", "149.248.55.142"));
+        vSeeds.push_back(CDNSSeedData("45.32.5.0", "45.32.5.0"));
+        vSeeds.push_back(CDNSSeedData("45.77.202.35", "45.77.202.35"));
+        vSeeds.push_back(CDNSSeedData("45.76.11.89", "45.76.11.89"));
+        vSeeds.push_back(CDNSSeedData("149.28.230.145", "149.28.230.145"));
+        vSeeds.push_back(CDNSSeedData("208.167.255.100", "208.167.255.100"));
 
 		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23); // A
 		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 25); // B
