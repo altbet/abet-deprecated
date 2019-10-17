@@ -5943,7 +5943,9 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         // broken releases with wrong blockchain data
         if (pfrom->cleanSubVer == "/Altbet Core:0.0.0.0/" ||
             pfrom->cleanSubVer == "/Altbet Core:0.0.0.1/" ||
-            pfrom->cleanSubVer == "/Altbet Core:1.0.0.0/" && ActiveProtocol() < 72007) {
+            pfrom->cleanSubVer == "/Altbet Core:1.0.0.0/" && ActiveProtocol() < 72007 ||
+            pfrom->cleanSubVer == "/Altbet Core:1.0.1.2/" && ActiveProtocol() < 72014)
+            {
             LOCK(cs_main);
             Misbehaving(pfrom->GetId(), 100); // instantly ban them because they have bad block data
             return false;
