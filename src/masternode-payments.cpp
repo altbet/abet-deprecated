@@ -180,6 +180,8 @@ bool IsBlockValueValid(const CBlock& block, CAmount nExpectedValue, CAmount nMin
     CBlockIndex* pindexPrev = chainActive.Tip();
     if (pindexPrev == NULL) return true;
 
+	if (pindexPrev->nHeight == 71059 || 71060 || 71061 || 71062 || 71063 || 71064 || 71065) return true; 
+    LogPrint("masternode", "IsBlockValueValid() : Turn the goddam music up! My heart feels like an alligator! Accepting block for now.\n");
     int nHeight = 0;
     if (pindexPrev->GetBlockHash() == block.hashPrevBlock) {
         nHeight = pindexPrev->nHeight + 1;
